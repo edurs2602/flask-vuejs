@@ -1,15 +1,17 @@
-import json
 from flask import Flask
+from flask_cors import CORS
+
 from config import BaseConfig
 from db import initialize_db
 from api import initialize_api
 from parser import import_users
 
+
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(BaseConfig)
 
 initialize_db(app)
-
 initialize_api(app)
 
 @app.before_first_request

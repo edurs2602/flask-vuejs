@@ -26,10 +26,6 @@ errors = {
         "message": "User not found in database",
         "status": 400
     },
-    "UsernameAlreadyExistError": {
-        "message": "User with specified username already exists in database",
-        "status": 400
-    },
 }
 
 def register_error_handlers(app):

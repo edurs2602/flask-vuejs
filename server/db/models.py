@@ -1,7 +1,9 @@
 from . import db
 
+
 class UserPreferences(db.EmbeddedDocument):
     timezone = db.StringField(required=True)
+
 
 class User(db.Document):
     username = db.StringField(required=True)
