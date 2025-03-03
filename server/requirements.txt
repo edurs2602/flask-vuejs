@@ -1,0 +1,8 @@
+Flask==2.2.5
+Flask-CORS==3.0.10
+PyMongo==4.11.1
+python-dotenv==1.0.0
+flask-mongoengine==1.0.0
+Flask-RESTful==0.3.10
+celery==5.4.0
+redis>=4.2.0
