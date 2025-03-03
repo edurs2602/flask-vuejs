@@ -23,6 +23,14 @@ class UsersApi(Resource):
             error_message = "Missing required fields: " + ", ".join(missing_fields)
             raise SchemaValidationError(description=error_message)
 
+        for field in required_fields:
+            if not body.get(field):
+                missing_fields.append(f"Field {field} cannot be empty.")
+
+        if missing_fields:
+            error_message = "Fields cannot be empty: " + ", ".join(missing_fields)
+            raise SchemaValidationError(description=error_message)
+
         try:
             user = User(**body).save()
             return {'id': str(user.id)}, 201
